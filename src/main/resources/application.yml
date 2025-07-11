@@ -1,0 +1,103 @@
+spring:
+  application:
+    name: libraryapi
+
+
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    date-format: yyyy-MM-dd
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENTID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+          github:
+            client-id: ${GITHUB_CLIENTID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope:
+              - read:user
+              - user:email
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+
+logging:
+  pattern:
+    console: '%clr(%d{dd-MM-yyyy HH:mm:ss}){faint} %clr(%5p) %clr([%t]){faint} %clr(%-40.40logger){cyan} %clr(:){yellow} %m%n'
+  file:
+    name: app.log
+  level:
+    root: warn
+    io:
+      github:
+        Gusta_code22: trace
+
+    org:
+      springframework:
+        web: debug
+        security: trace
+
+  # trace
+  # degub
+  # info
+  # warn
+  #error
+
+management:
+  server:
+    port:
+      9090
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+springdoc:
+  override-with-generic-response: false
+
+
+# production
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+  jpa:
+    show-sql: false
+
+
+#homologacao
+---
+spring:
+  config:
+    active:
+      on-proflie: homologacao
+  jpa:
+    show-sql: false
