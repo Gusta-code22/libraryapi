@@ -54,10 +54,6 @@ GITHUB_CLIENT_SECRET=<seu-secret-github>
 
 SPRING_PROFILES_ACTIVE=default
 Execute a aplicação:
-
-bash
-Copiar
-Editar
 mvn spring-boot:run
 Teste endpoints:
 
@@ -88,28 +84,6 @@ Configure o health check no caminho /healthz
 
 Sua API estará disponível publicamente em um domínio do Render
 
-📁 Estrutura do projeto (exemplo simplificado)
-bash
-Copiar
-Editar
-src/
- ├─ main/
- │   ├─ java/io/github/Gusta_code22/libraryapi/
- │   │   ├─ Application.java           # Inicializador da aplicação
- │   │   ├─ config/                   # Configurações (security, db)
- │   │   ├─ controller/               # Controladores REST
- │   │   │   ├─ LivroController.java
- │   │   │   ├─ AutorController.java
- │   │   │   └─ UsuarioController.java
- │   │   ├─ model/                    # Entidades JPA
- │   │   │   ├─ Livro.java
- │   │   │   ├─ Autor.java
- │   │   │   └─ Usuario.java
- │   │   ├─ repository/               # Interfaces JPA Repository
- │   │   ├─ service/                  # Regras de negócio
- │   │   └─ security/                 # Configuração OAuth2
- │   └─ resources/
- │       └─ application.yml           # Configurações via variáveis
 🔍 Como funciona o fluxo básico
 Usuários autenticam via Google/GitHub usando OAuth2
 
