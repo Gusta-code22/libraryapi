@@ -1,6 +1,7 @@
 # 📚 LibraryAPI — Biblioteca Digital
 
-Uma API RESTful desenvolvida em **Spring Boot** para gerenciar uma biblioteca digital, permitindo o cadastro, busca e gerenciamento de **livros**, **autores** e **usuários**, com autenticação segura via OAuth2 (Google e GitHub) e armazenamento em banco **PostgreSQL**.
+Uma API RESTful desenvolvida em **Spring Boot** para gerenciar uma biblioteca digital, permitindo o cadastro, busca e gerenciamento de **livros**, **autores** e **usuários**, com autenticação segura via OAuth2 (Google e GitHub),
+**JWT** e armazenamento em banco **PostgreSQL**.
 
 ---
 
