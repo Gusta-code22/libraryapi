@@ -147,7 +147,7 @@ public class AutorController implements GenericController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('GERENTE')")
-    @Operation(summary = "Autalizar", description = "Atualiza um autor existente")
+    @Operation(summary = "Atualizar", description = "Atualiza um autor existente")
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Autor Atualizado com sucesso."),
             @ApiResponse(responseCode = "404", description = "Autor nao encontrado."),
