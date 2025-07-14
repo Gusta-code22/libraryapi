@@ -10,3 +10,15 @@ docker run --name librarydb -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGR
 
 #Roda pgadmin4
 docker run --name pgadmin4 -p 15432:80 -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=admin --network library-network dpage/pgadmin4
+
+
+docker run -d -p 8080:8080 \
+-e DATASOURCE_URL='jdbc:postgresql://<host>:5432/library_database_wtsq' \
+-e DATASOURCE_USERNAME='library_database_wtsq_user' \
+-e DATASOURCE_PASSWORD='SUA_SENHA' \
+-e GOOGLE_CLIENTID='...' \
+-e GOOGLE_CLIENT_SECRET='...' \
+-e GITHUB_CLIENTID='...' \
+-e GITHUB_CLIENT_SECRET='...' \
+-e SPRING_PROFILES_ACTIVE='production' \
+--name libraryapi_container libraryapi
