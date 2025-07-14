@@ -24,7 +24,7 @@ Uma API RESTful desenvolvida em **Spring Boot** para gerenciar uma biblioteca di
 - Spring Security com OAuth2 e JWT  
 - PostgreSQL  
 - Maven  
-- Deploy configurado para Render (ou outro ambiente em nuvem)
+- Deploy configurado para Render, AWS (ou outro ambiente em nuvem)
 
 ---
 
